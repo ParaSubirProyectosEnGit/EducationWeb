@@ -19,7 +19,7 @@
                 @foreach($asignaturas as $asignatura)
                     <option value="{{ $asignatura->id }}" 
                     @isset($update)
-                        @if($asignatura->id == $notas->id_asignatura)
+                        @if($asignatura->id == $nota->id_asignatura)
                             selected="selected"
                         @endif
                     @endisset
@@ -44,7 +44,7 @@
                 @foreach($alumnos as $alumno)
                     <option value="{{ $alumno->id }}" 
                     @isset($update)
-                        @if($alumno->id == $notas->id_alumno)
+                        @if($alumno->id == $nota->id_alumno)
                             selected="selected"
                         @endif
                     @endisset

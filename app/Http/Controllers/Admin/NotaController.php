@@ -80,7 +80,9 @@ class NotaController extends Controller
         $title = __("Editar Notas");
         $textButton = __("Actualizar");
         $route = route("admin.notas.update", ["nota" => $nota]);
-        return view("admin.notas.edit", compact("update","title","textButton","route","nota"));
+        $asignaturas = Asignatura::all();
+        $alumnos = Alumno::all();
+        return view("admin.notas.edit", compact("update","title","textButton","route","nota","asignaturas","alumnos"));
     }
 
     /**
