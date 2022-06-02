@@ -24,6 +24,21 @@
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
+                @auth
+                    <a href="{{ route('alumnos.index') }}" class="text-lg font-semibold text-gary-100 no-underline">
+                        {{ __('Listado alumnos') }}
+                    </a>
+                @endauth
+                @auth
+                    <a href="{{ route('asignaturas.index') }}" class="text-lg font-semibold text-gary-100 no-underline">
+                        {{ __('Listado asignaturas') }}
+                    </a>
+                @endauth
+                @can('admin.home')
+                <a href="{{ route('admin.home') }}" class="text-lg font-semibold text-gary-100 no-underline">
+                        {{ __('ADMINISTRADOR') }}
+                    </a>
+                @endcan
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     @guest
                         <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
