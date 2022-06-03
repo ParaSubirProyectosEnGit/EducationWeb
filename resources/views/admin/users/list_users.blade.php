@@ -14,7 +14,6 @@
             <th scope="col">{{ ("Nombre") }}</th>
             <th scope="col">{{ ("Email") }}</th>
             <th scope="col">{{ ("Creado") }}</th>
-            <th scope="col">{{ ("Acciones") }}</th>
         </tr>
         </thead>
         <tbody>
@@ -27,20 +26,6 @@
 
                     <td>{{ date_format($user->created_at, "d/m/Y") }}</td>
 
-                    <td class="border px-4 py-2">
-                        <a href="{{ route('admin.users.edit', ['user' => $user]) }}" class="btn btn-primary text-blue-400">{{ __("Editar") }}</a> |
-                        <a
-                            href="#"
-                            class="btn btn-danger text-red-400"
-                            onclick="event.preventDefault();
-                                document.getElementById('delete-concierto-{{ $user->id }}-form').submit();"
-                        >{{ __("Eliminar") }}
-                        </a>
-                        <form id="delete-concierto-{{ $user->id }}-form" action="{{ route('admin.users.destroy', ['user' => $user]) }}" method="POST" class="hidden">
-                            @method("DELETE")
-                            @csrf
-                        </form>
-                    </td>
 
                 </tr>
             @empty

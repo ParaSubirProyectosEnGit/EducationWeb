@@ -23,3 +23,5 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::get('/alumnos',[\App\Http\Controllers\AlumnoController::class, 'index'])->name('alumnos.index');
 
 Route::get('/asignaturas',[\App\Http\Controllers\AsignaturaController::class, 'index'])->name('asignaturas.index');
+
+Route::get('/notas',[\App\Http\Controllers\NotasController::class, 'show'])->name('notas.show');
