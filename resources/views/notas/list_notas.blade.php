@@ -3,7 +3,7 @@
 @section('content')
     <div class="flex justify-center flex-wrap bg-gray-200 p-4 mt-5">
         <div class="text-center">
-            <h1 class="mb-5">{{ __("Listado de alumnos") }}</h1>
+            <h1 class="mb-5">{{ __("Listado de notas") }}</h1>
         </div>
     </div> 
     <table class="border-separate border-2 text-center border-gray-500 mt-3" style="width: 100%">
@@ -14,10 +14,9 @@
         </tr>
         </thead>
         <tbody>
-            @forelse($notas as $nota)
+            @forelse($alumnos as $asignatura)
                 <tr>
-
-                    <td class="border px-4 py-2">{{ $nota->nota }}</td>
+                    <td class="border px-4 py-2">{{ $asignatura->nombre }}</td>
 
                     <td class="border px-4 py-2">{{ $nota->informacion }}</td>
 

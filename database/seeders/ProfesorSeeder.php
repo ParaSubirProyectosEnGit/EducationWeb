@@ -17,7 +17,7 @@ class ProfesorSeeder extends Seeder
     {
         $user1 = User::create([
             'name'=>'Antonio Gutierrez',
-            'email'=>'antoniogutierrezprof@educaweb.com',
+            'email'=>'antoniogutierrezprof@educationweb.com',
             'password'=>bcrypt('antonio')
         ])->assignRole('profesor');
 

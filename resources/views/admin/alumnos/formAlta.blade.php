@@ -55,6 +55,42 @@
         </div>
     </div>
     
+    <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-5">
+            <label for="email" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                {{ __('Direccion de correo electronico') }}:
+            </label>
+
+            <input id="email" type="email"
+                class="form-input w-full @error('email') border-red-500 @enderror" name="email"
+                value="{{ old('email') ?? $user->email }}" required autocomplete="email">
+
+            @error('email')
+            <p class="text-red-500 text-xs italic mt-4">
+                {{ $message }}
+            </p>
+            @enderror
+        </div>
+    </div>
+
+    <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-5">
+            <label for="password" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                {{ __('Contraseña') }}:
+            </label>
+
+            <input id="password" type="password"
+                class="form-input w-full @error('password') border-red-500 @enderror" name="password"
+                required autocomplete="new-password">
+
+            @error('password')
+            <p class="text-red-500 text-xs italic mt-4">
+                {{ $message }}
+            </p>
+            @enderror
+        </div>
+    </div>
+
     <div class="md:flex md:items-center">
         <div class="md:w-1/3">
             <button class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">

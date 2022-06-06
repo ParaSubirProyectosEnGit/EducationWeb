@@ -10,4 +10,8 @@ class Alumno extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'direccion', 'nombre_tutor'];
+
+    public function asignaturas(){
+        return $this->belongsToMany(Asignatura::class)->withPivot("nota");
+    }
 }

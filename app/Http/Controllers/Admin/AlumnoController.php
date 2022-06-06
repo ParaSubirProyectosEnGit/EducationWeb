@@ -90,16 +90,15 @@ class AlumnoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Alumno $alumno, User $user)
+    public function update(Request $request, Alumno $alumno)
     {
         $this->validate($request, [
             "name" => "required",
             "direccion" => "nullable|string|min:10",
-            "nombre_tutor" => "nullable|string",
-            "email" => "required|string|email|max:255",
+            "nombre_tutor" => "nullable|string"
         ]);
-        $user->fill($request->only("email"))->save();
-        $alumno->fill($request->only("name", "direccion","nombre_tutor"))->save();
+
+        $alumno->fill($request->only("name","direccion","nombre_tutor"))->save();
         return redirect(route("admin.alumnos.index"))
         ->with("success",__("Alumno actualizado!"));
     }
