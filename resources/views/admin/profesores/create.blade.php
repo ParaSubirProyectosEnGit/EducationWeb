@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="flex justify-center flex-wrap p-4 mt-5"> 
-        @include("admin.profesores.form")
+        @include("admin.profesores.formAlta")
     </div>
 @stop
 

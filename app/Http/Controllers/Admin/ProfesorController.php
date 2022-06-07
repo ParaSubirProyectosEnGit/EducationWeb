@@ -75,13 +75,13 @@ class ProfesorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profesor $profesor, User $user)
+    public function edit(Profesor $profesore, User $user)
     {
         $update = true;
         $title = __("Editar Profesor");
         $textButton = __("Actualizar");
-        $route = route("admin.profesores.update", ["profesor" => $profesor, "user" => $user]);
-        return view("admin.profesores.edit", compact("update","title","textButton","route","profesor","user"));
+        $route = route("admin.profesores.update", ["profesore" => $profesore, "user" => $user]);
+        return view("admin.profesores.edit", compact("update","title","textButton","route","profesore","user"));
     }
 
     /**
@@ -91,16 +91,14 @@ class ProfesorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profesor $profesor, User $user)
+    public function update(Request $request, Profesor $profesor)
     {
         $this->validate($request, [
             "name" => "required",
             "direccion" => "nullable|string|min:10",
-            "telefono" => "nullable|string",
-            "email" => "required|string|email|max:255",
+            "telefono" => "nullable|string"
         ]);
-        $user->fill($request->only("email"))->save();
-        $profesor->fill($request->only("name", "direccion","telefono"))->save();
+        $profesor->fill($request->only("name","direccion","telefono"))->save();
         return redirect(route("admin.profesores.index"))
         ->with("success",__("Profesor actualizado!"));
     }

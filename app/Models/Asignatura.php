@@ -12,6 +12,6 @@ class Asignatura extends Model
     protected $fillable = ['nombre', 'profesor'];
 
     public function alumnos(){
-        return $this->belongsToMany(Alumno::class)->withPivot("nota")->ondelete("cascade");
+        return $this->belongsToMany(Alumno::class)->withPivot("nota");
     }
 }
