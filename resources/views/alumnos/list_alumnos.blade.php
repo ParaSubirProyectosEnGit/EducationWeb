@@ -10,7 +10,7 @@
         <thead>
         <tr>
             <th scope="px-4 py-2">{{ ("Nombre") }}</th>
-            <th scope="px-4 py-2">{{ ("Informacion") }}</th>
+            <th scope="px-4 py-2">{{ ("Información") }}</th>
         </tr>
         </thead>
         <tbody>

@@ -9,8 +9,8 @@
     <table class="border-separate border-2 text-center border-gray-500 mt-3" style="width: 100%">
         <thead>
         <tr>
+            <th scope="px-4 py-2">{{ ("Nombre") }}</th>
             <th scope="px-4 py-2">{{ ("Nota") }}</th>
-            <th scope="px-4 py-2">{{ ("Informacion") }}</th>
         </tr>
         </thead>
         <tbody>
@@ -18,7 +18,7 @@
                 <tr>
                     <td class="border px-4 py-2">{{ $asignatura->nombre }}</td>
 
-                    <td class="border px-4 py-2">{{ $nota->informacion }}</td>
+                    <td class="border px-4 py-2">{{ $asignatura->asignaturas->notas }}</td>
 
                 </tr>
             @empty

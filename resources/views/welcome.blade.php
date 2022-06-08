@@ -31,7 +31,7 @@
                 <h1 class="mb-6 text-gray-600 text-center font-light tracking-wider text-4xl sm:mb-8 sm:text-6xl" style="color: black">
                     <b>{{ config('app.name', 'Laravel') }}</b>
                 </h1>
-                <h4 class="text-center">by Barbara Suárez Fernández</h4>
+                <h4 class="text-center">by Bárbara Suárez Fernández</h4>
             </div>
         </div>
     </div>
