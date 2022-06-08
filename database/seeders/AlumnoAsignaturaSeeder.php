@@ -20,7 +20,7 @@ class AlumnoAsignaturaSeeder extends Seeder
             'nota'=>'6'
         ]);
 
-        $nota2 = Alumnoasignatura::create([
+        $nota2 = AlumnoAsignatura::create([
             'id_asignatura'=>'2',
             'id_alumno'=>'1',
             'nota'=>'7'

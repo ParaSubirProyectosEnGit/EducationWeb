@@ -24,4 +24,4 @@ Route::get('/alumnos',[\App\Http\Controllers\AlumnoController::class, 'index'])-
 
 Route::get('/asignaturas',[\App\Http\Controllers\AsignaturaController::class, 'index'])->name('asignaturas.index');
 
-Route::get('/notas',[\App\Http\Controllers\AlumnoAsignaturaController::class, 'show'])->name('notas.show');
+Route::get('/notas',[\App\Http\Controllers\AlumnoAsignaturaController::class, 'index'])->name('notas.index');

@@ -47,7 +47,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.notas.edit'])->assignRole($admin);
         Permission::create(['name' => 'admin.notas.destroy'])->assignRole($admin);
 
-        Permission::create(['name' => 'notas.show'])->assignRole($alumno);
+        Permission::create(['name' => 'notas.index'])->assignRole($alumno);
 
         Permission::create(['name' => 'notas.create'])->assignRole($profesor);
         Permission::create(['name' => 'notas.edit'])->assignRole($profesor);

@@ -14,7 +14,8 @@ class AlumnoAsignaturaController extends Controller
      */
     public function index()
     {
-        //
+        $alumnos = Alumno::all();
+        return view('alumnos.list_alumnos',compact("alumnos"));
     }
 
     /**

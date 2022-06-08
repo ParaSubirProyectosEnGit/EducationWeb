@@ -24,19 +24,19 @@
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
-                @can('notas.show')
-                    <a href="{{ route('notas.show') }}" class="text-lg font-semibold text-gary-100 no-underline">
+                @can('notas.index')
+                    <a href="{{ route('notas.index') }}" class="text-lg font-semibold text-gary-100 no-underline">
                         {{ __('Listado notas') }}
                     </a>
                 @endcan
-                @can('asignaturas.index')
+                @can('notas.create')
                     <a href="{{ route('asignaturas.index') }}" class="text-lg font-semibold text-gary-100 no-underline">
-                        {{ __('Listado asignaturas') }}
+                        {{ __('Asignar notas') }}
                     </a>
                 @endcan
                 @can('admin.index')
                 <a href="{{ route('admin.index') }}" class="text-lg font-semibold text-gary-100 no-underline">
-                        {{ __('ADMINISTRADOR') }}
+                        {{ __('Administrador') }}
                     </a>
                 @endcan
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">

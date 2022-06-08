@@ -7,7 +7,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AlumnoController;
 use App\Http\Controllers\Admin\ProfesorController;
 use App\Http\Controllers\Admin\AsignaturaController;
-use App\Http\Controllers\Admin\NotaController;
+use App\Http\Controllers\Admin\AlumnoAsignaturaController;
+//use App\Http\Controllers\Admin\NotaController;
 
 Route::get('',[HomeController::class,'index'])->middleware('can:admin.index')->name('admin.index');
 
@@ -19,4 +20,6 @@ Route::resource('profesores',ProfesorController::class)->middleware('can:admin.p
 
 Route::resource('asignaturas',AsignaturaController::class)->middleware('can:admin.asignaturas')->names('admin.asignaturas');
 
-Route::resource('notas',NotaController::class)->middleware('can:admin.notas')->names('admin.notas');
+Route::resource('notas',AlumnoAsignaturaController::class)->middleware('can:admin.notas')->names('admin.notas');
+
+//Route::resource('notas',NotaController::class)->middleware('can:admin.notas')->names('admin.notas');
