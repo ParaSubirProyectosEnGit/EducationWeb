@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Alumno;
+use App\Models\Asignatura;
+use App\Models\AlumnoAsignatura;
 
 class AlumnoAsignaturaController extends Controller
 {
@@ -14,8 +16,10 @@ class AlumnoAsignaturaController extends Controller
      */
     public function index()
     {
-        $alumnos = Alumno::all();
-        return view('alumnos.list_alumnos',compact("alumnos"));
+        $alumnoAsignaturas = AlumnoAsignatura::all();
+        $asignaturas = Asignatura::all();
+        $alumno = Alumno::find(auth()->user()->id);
+        return view('notas.list_notas',compact("alumnoAsignaturas","asignaturas","alumno"));
     }
 
     /**
@@ -45,10 +49,9 @@ class AlumnoAsignaturaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Alumno $alumno)
+    public function show($id)
     {
-        $alumnos = Alumno::find($alumno->id);
-        return view('notas.list_notas',compact("alumnos"));
+        //
     }
 
     /**

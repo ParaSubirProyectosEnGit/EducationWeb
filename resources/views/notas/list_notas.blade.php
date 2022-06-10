@@ -5,20 +5,24 @@
         <div class="text-center">
             <h1 class="mb-5">{{ __("Listado de notas") }}</h1>
         </div>
+        {{ $alumno->name }};
     </div> 
     <table class="border-separate border-2 text-center border-gray-500 mt-3" style="width: 100%">
         <thead>
         <tr>
-            <th scope="px-4 py-2">{{ ("Nombre") }}</th>
+            <th scope="px-4 py-2">{{ ("Asignatura") }}</th>
             <th scope="px-4 py-2">{{ ("Nota") }}</th>
         </tr>
         </thead>
         <tbody>
-            @forelse($alumnos as $asignatura)
-                <tr>
-                    <td class="border px-4 py-2">{{ $asignatura->nombre }}</td>
-
-                    <td class="border px-4 py-2">{{ $asignatura->asignaturas->notas }}</td>
+            @forelse($alumnoAsignaturas as $alumnoasignatura)
+                <tr>        
+                    @foreach($asignaturas as $asignatura)
+                        @if($alumnoasignatura->id_asignatura == $asignatura->id)
+                            <td class="border px-4 py-2">{{ $asignatura->nombre }}</td>
+                        @endif
+                    @endforeach
+                    <td class="border px-4 py-2">{{ $alumnoasignatura->nota }}</td>
 
                 </tr>
             @empty
