@@ -5,7 +5,6 @@
         <div class="text-center">
             <h1 class="mb-5">{{ __("Listado de notas") }}</h1>
         </div>
-        {{ $alumno->name }};
     </div> 
     <table class="border-separate border-2 text-center border-gray-500 mt-3" style="width: 100%">
         <thead>
